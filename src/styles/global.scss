@@ -1,0 +1,118 @@
+@use 'variables' as vars;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+html {
+	font: 400 12pt/1.15 'Fira Sans', sans-serif;
+}
+
+body {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	background: vars.$bg;
+	color: vars.$fg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #eee;
+	font-weight: normal;
+}
+
+#header {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+
+	background: vars.$fg;
+	padding: 0.5rem 1rem;
+
+	> div {
+		flex: 1 1 0;
+	}
+
+	> div:nth-child(1) {
+		> h1 {
+			color: vars.$bg;
+			display: inline;
+			font: bold 18pt/1 'Unica One', sans-serif;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+	}
+
+	> div:nth-child(2) {
+		color: vars.$bg;
+		font: bold 32px/1 sans-serif;
+		text-align: center;
+	}
+
+	> div:nth-child(3) {
+		align-items: center;
+		color: vars.$bg;
+		display: flex;
+		justify-content: flex-end;
+
+		a + a {
+			margin-left: 1em;
+		}
+	}
+
+	a:link, a:visited {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:active, a:hover {
+		text-decoration: underline;
+	}
+}
+
+#content {
+	flex: 1;
+	max-width: 1180px;
+	padding: 1rem;
+	width: 100%;
+}
+
+#footer {
+	font-size: 0.9rem;
+	padding: 1rem;
+	text-align: center;
+}
+
+.btn {
+	background-color: vars.$primary;
+	box-shadow: 0 0 2px vars.$accent;
+	color: vars.$fg;
+	cursor: pointer;
+	display: inline-block;
+	font: normal 1.2rem/1 'Unica One';
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 0.1s;
+	user-select: none;
+
+	&:hover {
+		background-color: vars.$accent;
+	}
+
+	&.big {
+		font-size: 2rem;
+		padding: 0.5em 1em;
+	}
+}
+
+.icon-link > img {
+	height: 24px;
+}

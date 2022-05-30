@@ -1,0 +1,36 @@
+---
+import { Markdown } from 'astro/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const content = await fetch('https://raw.githubusercontent.com/withastro/docs/main/README.md').then(res => res.text());
+---
+<BaseLayout title="Identity // Watney">
+	<div id="content">
+		<div class="title">
+			<h1>Identity</h1>
+			<h2>User authentication & authorization</h2>
+		</div>
+
+		<div>
+			<h3>Install</h3>
+		</div>
+
+		<div>
+			<Markdown content={content}></Markdown>
+		</div>
+	</div>
+</BaseLayout>
+
+<style lang="scss">
+	.title {
+		
+		> h1 {
+			font-size: 2rem;
+			text-transform: uppercase;
+		}
+
+		> h2 {
+			font-size: 1.25rem;
+		}
+	}
+</style>

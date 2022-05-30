@@ -1,0 +1,15 @@
+---
+import getLatestRelease from '../helpers/getLatestRelease.ts';
+
+export interface Props {
+	classes?: string;
+}
+
+const latest = await getLatestRelease();
+
+let { classes = "" } = Astro.props as Props;
+classes += " btn";
+---
+<a class="{classes}" href="#" data-version="{latest.name}">
+	Download {latest.name}
+</a>
